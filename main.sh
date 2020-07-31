@@ -71,7 +71,6 @@ sudo sh -c 'test -f "/root/.bashrc" && { sudo mv "/root/.bashrc" "/root/.bashrc_
 sudo sh -c 'cp "dotfiles/bashrc" "/root/.bashrc"'
 
 
-
 # Keybinds
 # name0=""
 
