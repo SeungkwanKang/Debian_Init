@@ -75,3 +75,7 @@ sudo sh -c 'cp "dotfiles/bashrc" "/root/.bashrc"'
 # Keybinds
 # name0=""
 
+
+# Github settings
+git config --global credential.helper store
+
