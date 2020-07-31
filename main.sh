@@ -77,4 +77,5 @@ sudo sh -c 'cp "dotfiles/bashrc" "/root/.bashrc"'
 
 # Github settings
 git config --global credential.helper store
+git pull
 
