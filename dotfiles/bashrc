@@ -162,7 +162,7 @@ else
 fi
 
 #export PS1='\w `~/.rvm/bin/rvm-prompt i v g` `git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\n\[\033[37m\]$\[\033[00m\] '
-export PS1="\[${SU}\]\u\[${NC}\]:${BWhite}\W${NC}$> "
+export PS1="\n\[${SU}\]\u\[${NC}\] ${BWhite}\W${NC}> "
 
 # Custom functions
 
