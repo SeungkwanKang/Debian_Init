@@ -212,7 +212,7 @@ compress_tar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
 compress_zip() { zip -r "${1%%/}.zip" "$1" ; }
 
-find() {
+findr() {
     if [ $# = 1 ]
     then
         command find . -iname "*$@*"

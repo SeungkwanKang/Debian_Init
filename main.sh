@@ -3,7 +3,7 @@
 
 # Install packages
 sudo apt update && sudo apt -y upgrade
-sudo apt install -y git tree
+sudo apt install -y git tree texlive-full
 
 # Solve mobile tethering disconnection error
 sudo systemctl disable ModemManager.service
@@ -58,6 +58,18 @@ dconf write ${FULL_PATH}insert-spaces true
 dconf write ${FULL_PATH}scheme "'oblivion'"
 dconf write ${FULL_PATH}tab-size 4
 dconf write ${FULL_PATH}indent true
+unset FULL_PATH
+
+
+# Nautilus settings
+# Gedit settings
+FULL_PATH='/org/gnome/nautilus/'
+dconf write ${FULL_PATH}list-view/default-visible-columns "['name', 'size', 'type', 'date_modified_with_time']"
+dconf write ${FULL_PATH}list-view/use-full-path true
+dconf write ${FULL_PATH}preferences/default-folder-viewer 'list-view'
+dconf write ${FULL_PATH}preferences/show-creat-link true
+dconf write ${FULL_PATH}preferences/show-hidden-files true
+unset FULL_PATH
 
 
 # Set bashrc
