@@ -275,4 +275,9 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 
+alias au='sudo apt update && sudo apt -y upgrade'
+alias aup='sudo apt update'
+alias aug='sudo apt upgrade'
+alias ai='sudo apt install'
+
 alias su='su -'
