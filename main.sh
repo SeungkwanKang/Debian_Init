@@ -3,7 +3,7 @@
 
 # Install packages
 sudo apt update && sudo apt -y upgrade
-sudo apt install -y git tree texlive-full python-pip python3-venv python-virtualenv
+sudo apt install -y git tree texlive-full python-pip python3-pip python3-venv python-virtualenv
 
 # Solve mobile tethering disconnection error
 sudo systemctl disable ModemManager.service
