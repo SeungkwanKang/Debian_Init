@@ -3,7 +3,7 @@
 
 # Install packages
 sudo apt update && sudo apt -y upgrade
-sudo apt install -y git tree texlive-full
+sudo apt install -y git tree texlive-full python-pip python3-venv python-virtualenv
 
 # Solve mobile tethering disconnection error
 sudo systemctl disable ModemManager.service
@@ -90,4 +90,10 @@ sudo sh -c 'cp "dotfiles/bashrc" "/root/.bashrc"'
 # Github settings
 git config --global credential.helper store
 git pull
+
+
+# Python env
+mkdir $HOME/.pyenv
+python3 -m venv $HOME/.pyenv/py3
+python2 -m venv $HOME/.pyenv/py2
 

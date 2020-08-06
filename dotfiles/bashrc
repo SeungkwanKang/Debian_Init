@@ -281,3 +281,5 @@ alias aug='sudo apt upgrade'
 alias ai='sudo apt install'
 
 alias su='su -'
+
+export PYENV="$HOME/.pyenv"
