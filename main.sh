@@ -3,7 +3,7 @@
 
 # Install packages
 sudo apt update && sudo apt -y upgrade
-sudo apt install -y git tree texlive-full python-pip python3-pip python3-venv python-virtualenv
+sudo apt install -y git tree texlive-full python-pip python3-pip python3-venv python-virtualenv xz-utils software-properties-common apt-transport-https curl
 
 # Solve mobile tethering disconnection error
 sudo systemctl disable ModemManager.service
@@ -66,7 +66,7 @@ unset FULL_PATH
 FULL_PATH='/org/gnome/nautilus/'
 dconf write ${FULL_PATH}list-view/default-visible-columns "['name', 'size', 'type', 'date_modified_with_time']"
 dconf write ${FULL_PATH}list-view/use-full-path true
-dconf write ${FULL_PATH}preferences/default-folder-viewer 'list-view'
+dconf write ${FULL_PATH}preferences/default-folder-viewer "'list-view'"
 dconf write ${FULL_PATH}preferences/show-creat-link true
 dconf write ${FULL_PATH}preferences/show-hidden-files true
 unset FULL_PATH
