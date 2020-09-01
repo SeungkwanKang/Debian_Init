@@ -182,8 +182,10 @@ LINE_C=${Blue}
 # export PS1="\n\[${SU}\]\u\[${NC}\] ${BWhite}\W${NC}> "
 # Fancy Version
 # export PS1="\n ${LINE_C}┌──${SU} \u ${NC}${LINE_C}${BWhite}${On_Cyan} \w ${NC}${LINE_C}\n └ $ ${NC}"
+
 # Moderate? Version
-export PS1="\n ${SU} \u ${NC}${LINE_C}${BBlack}${On_Cyan} \w ${NC}${LINE_C}\n $ ${NC}"
+# 20200902 fix: You should wrap unprintable values with \[ and \]
+export PS1="\n ${SU} \u \[${NC}${LINE_C}${BBlack}${On_Cyan}\] \w \[${NC}${LINE_C}\]\n $ \[${NC}\]"
 
 # Custom functions
 
