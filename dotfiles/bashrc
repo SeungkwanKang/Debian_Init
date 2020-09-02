@@ -165,12 +165,16 @@ export LESS_TERMCAP_ue=$'\e[0m'
 # Custom exports
 
 # Test user type:
+
 if [[ ${USER} == "root" ]]; then
-    SU=${BWhite}${On_Red}           # User is root.
+# root user
+    SU=\[${BWhite}${On_Red}\]
 elif [[ ${USER} != $(logname) ]]; then
-    SU=${BRed} ${On_Black}         # User is not login user.
+# non-login user
+    SU=\[${BRed}${On_Black}\]
 else
-    SU=${BWhite}${On_Green}         # User is normal (well ... most of us are).
+# normal user
+    SU=\[${BWhite}${On_Green}\]
 fi
 
 LINE_C=${Blue}
