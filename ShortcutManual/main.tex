@@ -16,6 +16,7 @@
 \usepackage{verbatim}
 \usepackage{listings}
 \usepackage{booktabs}
+\usepackage{float}
 
 \pretitle{\begin{center}\Huge}
 \posttitle{\par\end{center}\vskip 0.5em}
@@ -58,8 +59,9 @@ Therefore, I state here the objective of this manual.
 First of all, this manual and all the shortcuts in it is based on \textbf{my} perspective, and is aiming for \textbf{my} convenience.
 Modifying shortcuts of the Windows OS is much harder compared to changing settings on a Linux environment, therefore this manual is closer to the Windows' shortcuts.
 This will result a Debian environment as convenient as possible for pre-Window users.
-\newpage
 
+\newpage
+\setstretch{1.5}
 
 \section{Debian Shortcuts} \label{S_Debain}
 
@@ -68,12 +70,41 @@ This will result a Debian environment as convenient as possible for pre-Window u
 
 
 \section{VS Code Shortcuts} \label{S_VSCode}
-	\begin{center}
+	The basic philosophy of the shortcut design is as follows:
+
+	\begin{itemize}
+		\item Ctrl is the main function key.
+		\item Up to two Ctrl keybindings make up functionality; the first key stands for the group, the second for the actual function.
+		\item Window (Super) is for manipulating windows. Window could be thought of a alias for Ctrl + W.
+		\item Alt is for alternation, which is used to alternate text.
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
 		\begin{tabular}{@{}c c@{}}
 			\toprule
 
+			Toggle Fullscreen & Window + F \\
+			Split Workspace & Window + \textbackslash \\
+			Spilt Terminal & Window + \textbackslash \\
+
 			\bottomrule
 		\end{tabular}
-	\end{center}
+		\caption{Keybindings for Windows}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{@{}c c@{}}
+			\toprule
+
+			Git Pull & Ctrl + G, Ctrl + P \\
+			Git Commit & Ctrl + G, C \\
+			Git Push & Ctrl + G, P \\
+
+			\bottomrule
+		\end{tabular}
+		\caption{Keybindings for Git}
+	\end{figure}
 
 \end{document}
