@@ -281,6 +281,8 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
+git config --global user.name "KangSK-KAIST"
+git config --global user.email "steelyk7@gmail.com"
 
 alias au='sudo apt update && sudo apt -y upgrade'
 alias aup='sudo apt update'
@@ -290,6 +292,15 @@ alias ai='sudo apt install'
 alias su='su -'
 
 export PYENV="$HOME/.pyenv"
+export RC="$HOME/.bashrc"
+export M5_PATH="$HOME/m5"
+export RISCV="$HOME/riscv_toolchain_native"
+export SHARE="/mnt/d/WSL_share"
 
-git config --global user.name "KangSK-KAIST"
-git config --global user.email "steelyk7@gmail.com"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/riscv64-linux-gnu/lib/"
+
+export PATH="$PATH:$HOME/Gemmini_dataset/package"
+export PATH="$PATH:$HOME/GitRepo/pintos/src/utils/"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/riscv_toolchain_native/bin:$PATH"
+export PATH="$HOME/riscv_toolchain_linux/bin:$PATH"
