@@ -25,10 +25,10 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -63,15 +63,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -79,7 +70,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
+    alias grep='grep --color=auto'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
 fi
@@ -160,36 +151,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 
 export LESS_TERMCAP_us=$'\e[1;4;31m' # underline
 export LESS_TERMCAP_ue=$'\e[0m'
-
-
-# Custom exports
-
-# Test user type:
-
-if [[ ${USER} == "root" ]]; then
-# root user
-    SU=\[${BWhite}${On_Red}\]
-elif [[ ${USER} != $(logname) ]]; then
-# non-login user
-    SU=\[${BRed}${On_Black}\]
-else
-# normal user
-    SU=\[${BWhite}${On_Green}\]
-fi
-
-LINE_C=${Blue}
-
-# Custom PS
-# export PS1='\w `~/.rvm/bin/rvm-prompt i v g` `git branch 2> /dev/null | grep -e ^* | sed -E s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\n\[\033[37m\]$\[\033[00m\] '
-
-# Simple Version
-# export PS1="\n\[${SU}\]\u\[${NC}\] ${BWhite}\W${NC}> "
-# Fancy Version
-# export PS1="\n ${LINE_C}┌──${SU} \u ${NC}${LINE_C}${BWhite}${On_Cyan} \w ${NC}${LINE_C}\n └ $ ${NC}"
-
-# Moderate? Version
-# 20200902 fix: You should wrap unprintable values with \[ and \]
-# export PS1="\n ${SU} \u \[${NC}${LINE_C}${BBlack}${On_Cyan}\] \w \[${NC}${LINE_C}\]\n $ \[${NC}\]"
 
 # Custom functions
 
