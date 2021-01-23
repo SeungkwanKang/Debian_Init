@@ -228,14 +228,7 @@ findr() {
     fi
 }
 
-gitl() {
-    git status .
-    git add .
-    git commit -m "$@"
-    git push origin HEAD
-}
-
-glog() {
+gitlog() {
     setterm -linewrap off
 
     git --no-pager log --all --color=always --graph --abbrev-commit --decorate \
@@ -255,6 +248,12 @@ glog() {
         | command less -r +'/[^/]HEAD'
 
     setterm -linewrap on
+}
+
+gitline() {
+    git log --numstat --oneline | \
+    gawk '{printf "%s\t%s\n", $1, $2}' | \
+    gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
 }
 
 # Custom aliases
