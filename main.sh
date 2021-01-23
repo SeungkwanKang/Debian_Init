@@ -1,9 +1,8 @@
 #!/bin/bash
 
-
 # Install packages
 sudo apt update && sudo apt -y upgrade
-sudo apt install -y git tree texlive-full python-pip python3-pip python3-venv python-virtualenv xz-utils software-properties-common apt-transport-https curl
+sudo apt install -y git tree htop python-pip python3-pip python3-venv python-virtualenv software-properties-common curl
 
 # Solve mobile tethering disconnection error
 sudo systemctl disable ModemManager.service
@@ -71,29 +70,10 @@ dconf write ${FULL_PATH}preferences/show-creat-link true
 dconf write ${FULL_PATH}preferences/show-hidden-files true
 unset FULL_PATH
 
-
 # Set bashrc
-DOTFILES=${HOME}/.dotfiles
-test -d ${DOTFILES} || mkdir ${DOTFILES}
-test -f ${HOME}/.bashrc && sudo rm -f "${HOME}/.bashrc"
-sudo cp "./dotfiles/bashrc" "${DOTFILES}/.bashrc"; sudo ln -sf "${DOTFILES}/.bashrc" "${HOME}/.bashrc";
-unset DOTFILES
-
-sudo sh -c 'test -f "/root/.bashrc" && { sudo mv "/root/.bashrc" "/root/.bashrc_old"; }'
-sudo sh -c 'cp "dotfiles/bashrc" "/root/.bashrc"'
-
-
-# Keybinds
-# name0=""
-
-
-# Github settings
-git config --global credential.helper store
-git pull
-
+cp $HOME/.bashrc  $HOME/.bashrc_old
+rm .bashrc_old
+cp ./dotfiles/.bashrc $HOME/.bashrc
 
 # Python env
-mkdir $HOME/.pyenv
-python3 -m venv $HOME/.pyenv/py3
-python2 -m venv $HOME/.pyenv/py2
-
+mkdir -p $HOME/pyenv

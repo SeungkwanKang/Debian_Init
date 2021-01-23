@@ -189,7 +189,7 @@ LINE_C=${Blue}
 
 # Moderate? Version
 # 20200902 fix: You should wrap unprintable values with \[ and \]
-export PS1="\n ${SU} \u \[${NC}${LINE_C}${BBlack}${On_Cyan}\] \w \[${NC}${LINE_C}\]\n $ \[${NC}\]"
+# export PS1="\n ${SU} \u \[${NC}${LINE_C}${BBlack}${On_Cyan}\] \w \[${NC}${LINE_C}\]\n $ \[${NC}\]"
 
 # Custom functions
 
@@ -264,8 +264,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias mkdirr='mkdir -p'
-
 alias ll='ls -lah --color'
 alias lr='ls -Rh --color'
 alias llr='ls -laRh --color'
@@ -275,8 +273,8 @@ alias rms='rm -i'
 alias cps='cp -i'
 alias mvs='mv -i'
 
-alias path='echo -e ${PATH//:/\\n}'
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias ppath='echo -e ${PATH//:/\\n}'
+alias plib='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 
 alias ga='git add .'
 alias gc='git commit -m'
@@ -291,7 +289,7 @@ alias ai='sudo apt install'
 
 alias su='su -'
 
-export PYENV="$HOME/.pyenv"
+export PYENV="$HOME/pyenv"
 export RC="$HOME/.bashrc"
 export M5_PATH="$HOME/m5"
 export RISCV="$HOME/riscv_toolchain_native"
