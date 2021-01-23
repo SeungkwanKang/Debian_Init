@@ -72,7 +72,7 @@ unset FULL_PATH
 
 # Set bashrc
 cp $HOME/.bashrc  $HOME/.bashrc_old
-rm .bashrc_old
+rm .bashrc
 cp ./dotfiles/.bashrc $HOME/.bashrc
 
 # Python env
