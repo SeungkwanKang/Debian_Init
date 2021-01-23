@@ -217,6 +217,18 @@ gitline() {
     gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
 }
 
+gityesterday() {
+    git log --numstat --oneline --since=yesterday.6:00am | \
+    gawk '{printf "%s\t%s\n", $1, $2}' | \
+    gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+}
+
+gittoday() {
+    git log --numstat --oneline --since="6:00" | \
+    gawk '{printf "%s\t%s\n", $1, $2}' | \
+    gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+}
+
 # Custom aliases
 
 alias ..='cd ..'
