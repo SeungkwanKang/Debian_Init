@@ -6,7 +6,7 @@ sudo apt install -y git tree htop python-pip python3-pip python3-venv python-vir
 
 # Set bashrc
 cp $HOME/.bashrc  $HOME/.bashrc_old
-rm .bashrc
+rm $HOME/.bashrc
 cp ./dotfiles/.bashrc $HOME/.bashrc
 
 # Python env
