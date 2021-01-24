@@ -218,7 +218,7 @@ gitline() {
 }
 
 gityesterday() {
-    if [ $( date +"%H" ) -gt 6 ]S
+    if [ $( date +"%H" ) -gt 6 ]
     then
         # Over 6am, check from yesterday's 6am to today's 6am
         git log --numstat --oneline --since="$( date --date="yesterday 6:00" )" --until="$( date --date="6:00" )" | \
