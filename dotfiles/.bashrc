@@ -218,15 +218,33 @@ gitline() {
 }
 
 gityesterday() {
-    git log --numstat --oneline --since=yesterday.6:00am | \
-    gawk '{printf "%s\t%s\n", $1, $2}' | \
-    gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    if [ $( date +"%H" ) > 6 ]
+    then
+        # Over 6am, check from yesterday's 6am to today's 6am
+        git log --numstat --oneline --since="$( date --date="yesterday 6:00" )" --until="$( date --date="6:00" )" | \
+        gawk '{printf "%s\t%s\n", $1, $2}' | \
+        gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    else
+        # Over 6am, check from day before yesterday's 6am to yesterday's 6am
+        git log --numstat --oneline --since="$( date --date="2 days ago 6:00" )" --until="$( date --date="yesterday 6:00" )" | \
+        gawk '{printf "%s\t%s\n", $1, $2}' | \
+        gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    fi
 }
 
 gittoday() {
-    git log --numstat --oneline --since="6:00" | \
-    gawk '{printf "%s\t%s\n", $1, $2}' | \
-    gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    if [ $( date +"%H" ) > 6 ]
+    then
+        # Over 6am, check from today's 6am
+        git log --numstat --oneline --since="$( date --date="6:00" )" | \
+        gawk '{printf "%s\t%s\n", $1, $2}' | \
+        gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    else
+        # Not yet 6am, check from yesterday's 6am
+        git log --numstat --oneline --since="$( date --date="2 days ago 6:00" )" | \
+        gawk '{printf "%s\t%s\n", $1, $2}' | \
+        gawk 'BEGIN{nAdd=0; nSub=0;} {match($0, /([0-9]+)\t([0-9]+)/, m); nAdd+=m[1]; nSub+=m[2]} END{print nAdd, nSub}'
+    fi
 }
 
 # Custom aliases
