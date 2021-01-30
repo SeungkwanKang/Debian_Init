@@ -75,5 +75,7 @@ cp $HOME/.bashrc  $HOME/.bashrc_old
 rm .bashrc
 cp ./dotfiles/.bashrc $HOME/.bashrc
 
-# Python env
-mkdir -p $HOME/pyenv
+# Move personal scripts
+mkdir -p $HOME/.local/bin
+cp ./shell_scripts/* $HOME/.local/bin
+chmod -R 755 $HOME/.local/bin
