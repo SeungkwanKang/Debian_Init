@@ -52,7 +52,7 @@ NC='\e[0m'               # Color Reset
 
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
-PS1="${Red}k${Yellow}a${Green}n${Cyan}g${Blue}s${Purple}k${White}@docker[debian10]:${Blue}\w# ${NC}"
+PS1="${Red}k${Yellow}a${Green}n${Cyan}g${Blue}s${Purple}k${White}@docker[debian10]:${Blue}\w${White}$ ${NC}"
 
 # Color Man pages
 export LESS_TERMCAP_mb=$'\e[1;33m' # Bold
