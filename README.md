@@ -25,3 +25,32 @@
 
 The `Dockerfiles` directory contians personal Dockerfile configurations for use.
 The actual docker images are not open for privacy reasons, but you may build your own using the Dockerfile settings.
+
+### Build Debian10
+
+```shell
+  cd Dockerfiles/debian
+  docker build -t kangsk/debian10:1.0 .
+```
+
+### Build SimpleSSD
+The SimpleSSD docker image depends on SimpleSSD and kangsk/debian10.
+Get SimpleSSD from the original repo and place it under `Dockerfiles/SimpleSSD`
+
+```shell
+  # After building kangsk/debian10
+  cd Dockerfiles/SimpleSSD
+  # git clone SimpleSSD
+  docker build -t kangsk/simplessd-fs:1.0 .
+```
+
+### Build Nvidia
+
+```shell
+  # After building kangsk/debian10
+  cd Dockerfiles/nvidia
+  # git clone SimpleSSD
+  docker build -t kangsk/nvidia:1.0 .
+```
+
+Warning: This image is very big, as it contains all nvidia drivers.
