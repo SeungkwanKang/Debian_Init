@@ -20,3 +20,8 @@
   - bashrc setting
   - personal scripts to `.local/bin`
 - main_simple.sh: Simpler shell that is same with main.sh, but without apt update && upgrade
+
+## `Dockerfiles` directory
+
+The `Dockerfiles` directory contians personal Dockerfile configurations for use.
+The actual docker images are not open for privacy reasons, but you may build your own using the Dockerfile settings.
