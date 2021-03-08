@@ -21,9 +21,6 @@ RUN echo 'deb http://deb.debian.org/debian testing main' >> /etc/apt/sources.lis
 	g++-9 \
 	cmake && \
 	apt autoremove -y
-COPY sources.list /etc/apt/sources.list
-RUN apt update &&	apt upgrade -y
-
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip3 install -r requirements.txt

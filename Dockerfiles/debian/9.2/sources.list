@@ -8,7 +8,7 @@ deb-src http://security.debian.org/debian-security jessie/updates main contrib n
 deb http://deb.debian.org/debian/ jessie-updates main contrib non-free
 deb-src http://deb.debian.org/debian/ jessie-updates main contrib non-free
 
-deb [arch=amd64] https://download.docker.com/linux/debian jessie stable
+# deb [arch=amd64] https://download.docker.com/linux/debian jessie stable
 ## deb-src [arch=amd64] https://download.docker.com/linux/debian jessie stable
 # deb http://deb.debian.org/debian jessie-backports main contrib non-free
 # deb-src http://deb.debian.org/debian jessie-backports main contrib non-free
