@@ -1,0 +1,19 @@
+deb http://deb.debian.org/debian/ buster main contrib non-free
+deb-src http://deb.debian.org/debian/ buster main contrib non-free
+
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
+
+# buster-updates, previously known as 'volatile'
+deb http://deb.debian.org/debian/ buster-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ buster-updates main contrib non-free
+
+deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+## deb-src [arch=amd64] https://download.docker.com/linux/debian buster stable
+# deb http://deb.debian.org/debian buster-backports main contrib non-free
+# deb-src http://deb.debian.org/debian buster-backports main contrib non-free
+
+# deb https://developer.download.nvidia.com/compute/cuda/repos/debian10/x86_64/ /
+## deb-src https://developer.download.nvidia.com/compute/cuda/repos/debian10/x86_64/ /
+
+# deb http://deb.debian.org/debian testing main contrib non-free
